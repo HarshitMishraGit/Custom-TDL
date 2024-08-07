@@ -1,0 +1,28 @@
+[#Menu: Gateway of Tally]
+    Add: Key Item: TDL Structure: T: Display: TDL Structure
+
+[Report: TDL Structure]
+    Form: TDL Structure Form
+	Plain JSON : Yes
+
+[Form: TDL Structure Form]
+    Part: TDL Structure Part
+	JSONTag:"Collections"
+
+[Part: TDL Structure Part]
+    Line: TDL Structure Line
+    Repeat: TDL Structure Line: TDL Structure Collection
+	JSONTag:"Collections_1"
+
+[Line: TDL Structure Line]
+    Field: TDL Structure Field
+	JSONTag:"Collections_2"
+
+[Field: TDL Structure Field]
+    Set as: $Name
+	JSONTag:"Collections_2"
+
+[Collection: TDL Structure Collection]
+    Type: Ledger
+    Child Of: $$GroupSundryDebtors
+    Fetch: Name

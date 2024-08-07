@@ -1,0 +1,39 @@
+[#Menu: Gateway of Tally]
+    Add: Key Item: Export Stock Items: T: Display: Export Stock Items Report
+
+[Report: Export Stock Items Report]
+    Form: Export Stock Items Form
+
+[Form: Export Stock Items Form]
+    Part: Export Stock Items Part
+
+[Part: Export Stock Items Part]
+    Line: Export Stock Items Line
+    Repeat: Export Stock Items Line: Stock Items Collection
+
+[Line: Export Stock Items Line]
+    Field: Stock Item GUID, Stock Item Name 1, Stock Item Quantity, Stock Item Stock Group, Stock Item Base Unit
+
+[Field: Stock Item GUID]
+    Set as: $GUID
+    Width: 20
+
+[Field: Stock Item Name 1]
+    Set as: $Name
+    Width: 20
+
+[Field: Stock Item Quantity]
+    Set as: $ClosingBalance
+    Width: 10
+
+[Field: Stock Item Stock Group]
+    Set as: $Parent
+    Width: 20
+
+[Field: Stock Item Base Unit]
+    Set as: $BaseUnits
+    Width: 10
+
+[Collection: Stock Items Collection]
+    Type: StockItem
+    Fetch: GUID, Name, ClosingBalance, Parent, BaseUnits
